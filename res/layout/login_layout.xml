@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:paddingBottom="10dip" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="22dip" >
+
+                <ImageView
+                    android:id="@+id/iv"
+                    android:layout_width="202dp"
+                    android:layout_height="202dp"
+                    android:background="@drawable/login" />
+
+            </FrameLayout>
+
+            <EditText
+                android:id="@+id/userNameText"
+                android:layout_width="fill_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="12dip"
+                android:layout_marginRight="12dip"
+                android:drawablePadding="15dip"
+                android:ems="10"
+                android:hint="请输入账户"
+                android:inputType="text"
+                android:paddingBottom="2dip"
+                android:paddingLeft="15dip"
+                android:paddingRight="15dip"
+                android:paddingTop="2dip"
+                android:singleLine="true"
+                android:textColorHint="#ff999999"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/passwdText"
+                android:layout_width="fill_parent"
+                android:layout_height="40dip"
+                android:layout_marginBottom="20dip"
+                android:layout_marginLeft="12dip"
+                android:layout_marginRight="12dip"
+                android:layout_marginTop="10dip"
+                android:drawablePadding="15dip"
+                android:ems="10"
+                android:hint="请输入密码"
+                android:inputType="textPassword"
+                android:paddingBottom="2dip"
+                android:paddingLeft="15dip"
+                android:paddingRight="15dip"
+                android:paddingTop="2dip"
+                android:singleLine="true"
+                android:textColorHint="#ff999999"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/bnLogin"
+                android:layout_width="fill_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="12dip"
+                android:layout_marginRight="12dip"
+                android:singleLine="true"
+                android:text="登录"
+                android:textColor="#ffffffff"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/bnRegister"
+                android:layout_width="fill_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="12dip"
+                android:layout_marginRight="12dip"
+                android:singleLine="true"
+                android:text="注册"
+                android:textColor="#ffffffff"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/powerby"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="bottom|center"
+                android:text="powered by 706"
+                android:textSize="11dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
