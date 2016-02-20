@@ -94,17 +94,17 @@ public class MainActivity extends Activity implements OnClickListener,
 		
 		
 		
-		// listviewÊÊÅä
+		// listviewé€‚é…
 		lv = (ListView) findViewById(R.id.lv);
 		list = new ArrayList<Ldata>();
 		adapterc = new ListAdapter(list, this);
 		lv.setAdapter(adapterc);
 
-		// ³õÊ¼»¯Ê±ÏÔÊ¾µÄÊı¾İ
+		// åˆå§‹åŒ–æ—¶æ˜¾ç¤ºçš„æ•°æ®
 		ldata = new Ldata(Html.fromHtml("hello"), getTime(), 2);
 		list.add(ldata);
 
-		// ·¢ËÍÊÂ¼ş
+		// å‘é€äº‹ä»¶
 		btn_send = (Button) findViewById(R.id.btn_send);
 		btn_voice = (Button) findViewById(R.id.btn_voice);
 		btn_send.setOnClickListener(this);
@@ -116,12 +116,12 @@ public class MainActivity extends Activity implements OnClickListener,
 
 			@Override
 			public void run() {
-				Looper.prepare();// ·ÇÖ÷Ïß³ÌÖĞÄ¬ÈÏÃ»ÓĞ´´½¨Looper¶ÔÏó£¬
+				Looper.prepare();// éä¸»çº¿ç¨‹ä¸­é»˜è®¤æ²¡æœ‰åˆ›å»ºLooperå¯¹è±¡ï¼Œ
 				// Message msg = handler.obtainMessage();
 				//
 				// handler.sendMessage(msg);
 
-				// Â¼ÒôÆ÷¼àÌı
+				// å½•éŸ³å™¨ç›‘å¬
 				VoiceRecognizer.shareInstance().setSilentTime(1000);
 				VoiceRecognizer.shareInstance().setListener(
 						(VoiceRecognizerListener) MainActivity.this);
@@ -140,7 +140,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 
 	/*
-	 * ·¢ËÍ
+	 * å‘é€
 	 */
 	@Override
 	public void onClick(View v) {
@@ -148,7 +148,7 @@ public class MainActivity extends Activity implements OnClickListener,
 		switch (v.getId()) {
 		case R.id.btn_send:
 
-			// µÃµ½ÊäÈëÄÚÈİ£¬²¢×÷´¦Àí
+			// å¾—åˆ°è¾“å…¥å†…å®¹ï¼Œå¹¶ä½œå¤„ç†
 			String edit_contentStr = edit_content.getText().toString();
 			String contentStr = edit_contentStr.replace("\n", "");
 			contentStr = contentStr.replace(" ", "");
@@ -158,17 +158,17 @@ public class MainActivity extends Activity implements OnClickListener,
 			} catch (UnsupportedEncodingException e) {
 			}
 
-			// É¾³ıÒ³ÃæµÄÒ»Ğ©Êı¾İ
+			// åˆ é™¤é¡µé¢çš„ä¸€äº›æ•°æ®
 			UiUtil.removelists(list.size(), list);
 
-			// ¸üĞÂÒ³Ãæ
+			// æ›´æ–°é¡µé¢
 			edit_content.setText("");
 			ldata = new Ldata(Html.fromHtml(edit_contentStr), getTime(), 1);
 			list.add(ldata);
 			adapterc.notifyDataSetChanged();
 
 			httpdatadel = (Httpdatadel) new Httpdatadel(
-					"http://www.tuling123.com/openapi/api?key=f4920610821eb55922e97e4997494919&info="
+					"http://www.tuling123.com/openapi/api?key=åœ¨tuling123.comä¸Šæ³¨å†Œä¸ªå·ä¾¿æœ‰è‡ªå·±çš„keyäº†&info="
 							+ contentStr, this).execute();
 			break;
 
@@ -196,7 +196,7 @@ public class MainActivity extends Activity implements OnClickListener,
 			
 
 			httpdatadel = (Httpdatadel) new Httpdatadel(
-					"http://www.tuling123.com/openapi/api?key=f4920610821eb55922e97e4997494919&info="
+					"http://www.tuling123.com/openapi/api?key=åœ¨tuling123.comä¸Šæ³¨å†Œä¸ªå·ä¾¿æœ‰è‡ªå·±çš„keyäº†&info="
 							+ contentStr1, MainActivity.this).execute();
 
 			break;
@@ -204,7 +204,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 
 	/*
-	 * ·µ»Ø
+	 * è¿”å›
 	 */
 
 	@Override
@@ -220,7 +220,7 @@ public class MainActivity extends Activity implements OnClickListener,
 
 	public void parseData(String data) {
 		try {
-			// ÀûÓÃJSONObject µÃµ½textÄÚÈİ£¬¾ßÌå¿Éµ½Í¼Áé»úÆ÷ÈË²Î¿¼
+			// åˆ©ç”¨JSONObject å¾—åˆ°textå†…å®¹ï¼Œå…·ä½“å¯åˆ°å›¾çµæœºå™¨äººå‚è€ƒ
 			JSONObject jObject = new JSONObject(data);
 			int key = Integer.parseInt(jObject.getString("code"));
 			parseRD = new ParseReturnDate();
@@ -247,10 +247,10 @@ public class MainActivity extends Activity implements OnClickListener,
 
 			}
 
-			// ÓĞÍ¼Æ¬µØÖ·²Å¼ÓÔØ
+			// æœ‰å›¾ç‰‡åœ°å€æ‰åŠ è½½
 			if (content.contains("img")) {
 
-				// ¼ÓÔØÍøÂçÍ¼Æ¬[
+				// åŠ è½½ç½‘ç»œå›¾ç‰‡[
 				new Thread(new Runnable() {
 					@Override
 					public void run() {
@@ -265,7 +265,7 @@ public class MainActivity extends Activity implements OnClickListener,
 									url = new URL(source);
 									is = (InputStream) url.getContent();
 									drawable = Drawable.createFromStream(is,
-											"src"); // »ñÈ¡ÍøÂ·Í¼Æ¬
+											"src"); // è·å–ç½‘è·¯å›¾ç‰‡
 									drawable.setBounds(0, 0,
 											drawable.getIntrinsicWidth(),
 											drawable.getIntrinsicHeight());
@@ -324,7 +324,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 
 	/*
-	 * ÓïÒô
+	 * è¯­éŸ³
 	 */
 	@Override
 	public void onGetError(int arg0) {
